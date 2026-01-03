@@ -247,7 +247,7 @@ void loop()
     btnState = digitalRead(PinAxis5);
     if(btnState == LOW)
       {
-      output.write("G28\n");
+      output.write("M80\n");
       }
     }
   } 
@@ -258,7 +258,7 @@ void loop()
     btnState = digitalRead(PinAxis6);
     if(btnState == LOW)
       {
-      output.write("G27\n");
+      output.write("G28\n");
       }
     }
   } 
@@ -281,7 +281,7 @@ void loop()
 #endif
         whenLastCommandSent = now;
         output.write(MoveCommands[axis]);
-        #Serial.print(MoveCommands[axis]);
+//        #Serial.print(MoveCommands[axis]);
         if (distance < 0)
         {
           output.write('-');
